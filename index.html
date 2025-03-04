@@ -9,7 +9,7 @@
   <body>
     <div class="navbar">
       <div class="navbarRight">
-	<button id="themeToggle" class="navbarButton fa fa-moon"></button>
+	<button id="themeToggle" class="navbarButton fa fa-moon" onclick="switchTheme()"></button>
       </div>
       <div class="navbarMiddle">
 	<a href="https://flashrun24.github.io/blog" class="navbarButton">blog</a>
@@ -38,9 +38,29 @@
 	<i class="linkiconImage fab fa-discord"></i> flashrun24
 	</p>
         <p class="footerText">
-	<i class="linkiconImage fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/sepandar-farhood/">sepandar-farhood</a>
+	<i class="linkiconImage fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/sepandar-farhood/" class="footerLinkText">sepandar-farhood</a>
 	</p>
       </div>
     </div>
   <\body>
+  <script type="text/javascript">
+    var mode = localStorage.getItem('theme') ? localStorage.getItem('theme') == 'dark' : false;
+    if(mode) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+    else {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+    function switchTheme() {
+      mode=!mode;
+      if(mode) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+      }
+      else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+      }
+    }
+  </script>
 <\html>

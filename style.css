@@ -1,4 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+:root {
+    --text-color: #A6A6A6;
+    --background-color: #141111;
+    --tint-color: #83AAEC;
+}
+
+
+[data-theme="light"] {
+    --text-color: #494949;
+    --background-color: #FAF4ED;
+    --tint-color: #83AAEC;
+}
+
 * {
   color: white;
   font-family: "JetBrainsMono";
@@ -6,7 +18,7 @@
 }
 
 body {
-  background-color: #141111; /* #B8C6E1 */
+  background-color: var(--background-color);
   min-height: 100vh;
   min-width: 100vw;
   overflow: hidden;
@@ -37,7 +49,7 @@ Navbar
 .navbarIcon {
   margin-left: 2rem;
   height: 3rem;
-  border: 0.15rem solid #A6A6A6;
+  border: 0.15rem solid var(--text-color);
   border-radius: 50%;
 }
 
@@ -50,7 +62,7 @@ Navbar
 
 .navbarButton {
   font-size: 0.9rem;
-  color: #A6A6A6;
+  color: var(--text-color);
   text-decoration: none;
   margin-left: 5rem;
   margin-right: 5rem;
@@ -58,7 +70,7 @@ Navbar
 }
 
 .navbarButton:hover {
-  color: #83AAEC;
+  color: var(--tint-color);
 }
 
 
@@ -82,7 +94,7 @@ Title
   width: 60%;
   height: 50%;
   border-radius: 1rem;
-  box-shadow: 0 0 0.5rem #83AAEC;
+  box-shadow: 0 0 4.0rem var(--tint-color);
   display: flex;
   justify-content: center;
   justify-items: center;
@@ -95,7 +107,7 @@ Title
   top: 50%;
   transform: translate(-50%, -50%);
   width: 50%;
-  border: 0.15rem solid #A6A6A6;
+  border: 0.15rem solid var(--text-color);
   border-radius: 50%;
   filter: contrast(90%) brightness(80%);
 }
@@ -121,7 +133,7 @@ Title
 .titleTextSmall {
   display: block;
   position: relative;
-  color: #A6A6A6;
+  color: var(--text-color);
 }
 
 .titleTextBig {
@@ -164,7 +176,7 @@ Footer
 .footerText {
   display: inline-block;
   font-size: 0.9rem;
-  color: #A6A6A6;
+  color: var(--text-color);
   text-decoration: none;
   margin-left: 5rem;
   margin-right: 5rem;
@@ -172,8 +184,16 @@ Footer
   transition: 0.2s ease-in-out;
 }
 
+.footerLinkText {
+  display: inline-block;
+  font-size: 0.9rem;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: 0.2s ease-in-out;
+}
+
 .linkiconImage {
-  color: #A6A6A6;
+  color: var(--text-color);
   transition: ease-in-out 0.4s;
   font-size: 1em;
   display: inline-block;
