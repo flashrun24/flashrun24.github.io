@@ -63,6 +63,8 @@ Navbar
 .navbarButton {
   font-size: 0.9rem;
   color: var(--text-color);
+  background-color: rgba(0,0,0,0);
+  border: none;
   text-decoration: none;
   margin-left: 5rem;
   margin-right: 5rem;
@@ -78,9 +80,16 @@ Navbar
 Title
  */
 
+@keyframes glow {
+  from   {box-shadow: 0 0 1.0rem var(--tint-color);}
+  to     {box-shadow: 0 0 5.0rem var(--tint-color);}
+}
+
 .titleContainer {
   width: 100vw;
-  height: 100vh;
+  height: 70vh;
+  top: 12vh;
+  bottom: 10vh;
   display: block;
   position: relative;
 }
@@ -88,24 +97,50 @@ Title
 .titleBox {
   margin: 0;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 20%;
   width: 60%;
-  height: 50%;
+  height: 100%;
   border-radius: 1rem;
-  box-shadow: 0 0 4.0rem var(--tint-color);
+  box-shadow: 0 0 1.0rem var(--tint-color);
+  animation-name: glow;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: all ease-out;
+  animation-fill-mode: both;
   display: flex;
   justify-content: center;
   justify-items: center;
   text-align: center;
 }
 
+.aboutTitle {
+  padding: 0rem;
+  font-size: 2rem;
+  left: 0%;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  display: block;
+  color: var(--text-color);
+}
+
+.aboutText {
+  font-size: 0.9rem;
+  top: 20%;
+  left: 10%;
+  width: 80%;
+  text-align: center;
+  position: absolute;
+  display: block;
+  padding: 1rem;
+  color: var(--text-color);
+}
+
 .titleImage {
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  left: 20%;
+  margin: 10%;
   width: 50%;
   border: 0.15rem solid var(--text-color);
   border-radius: 50%;
@@ -115,16 +150,26 @@ Title
 .titleLeftText {
   display: block;
   position: relative;
+  top: 35%;
+}
+
+.titleBottom {
+  display: block;
+  position: relative;
   top: 50%;
-  transform: translateY(-50%);
+  left: 20%;
+  width: 60%;
+  height: 50%;
+  margin: 0;
+  padding: 0;
 }
 
 .titleLeft,
 .titleRight {
   display: inline-block;
   position: relative;
-  width: 49.5%;
-  height: 100%;
+  width: 50%;
+  height: 50%;
   margin: 0;
   padding: 0;
 }
@@ -155,7 +200,6 @@ Footer
 .footer {
   display: flexbox;
   justify-content: center;
-  justify-items: center;
   text-align: center;
   position: fixed;
   bottom: 0;

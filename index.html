@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>flashrun24</title>
     <link href="style.css" rel="stylesheet">
+  </head>
   <body>
     <div class="navbar">
       <div class="navbarRight">
-	<button id="themeToggle" class="navbarButton fa fa-moon" onclick="switchTheme()"></button>
+	<button class="navbarButton fa fa-moon" onclick="switchTheme()"></button>
       </div>
       <div class="navbarMiddle">
 	<a href="https://flashrun24.github.io/blog" class="navbarButton">blog</a>
@@ -28,6 +29,10 @@
 	  <img src="resource/avatar.png" class="titleImage">
 	</div>
       </div>
+      <div class="titleBottom">
+        <p class="aboutTitle">About me</p>
+	<p class="aboutText">I an currently a junior in highschool who is passionate about bioinformatics and computer science.</p>
+      </div>
     </div>
     <div class="footer">
       <div class="footerMiddle">
@@ -42,15 +47,9 @@
 	</p>
       </div>
     </div>
-  <\body>
   <script type="text/javascript">
-    var mode = localStorage.getItem('theme') ? localStorage.getItem('theme') == 'dark' : false;
-    if(mode) {
-      document.documentElement.setAttribute('data-theme', 'dark');
-    }
-    else {
-      document.documentElement.setAttribute('data-theme', 'light');
-    }
+    var mode = localStorage.getItem('theme') ? localStorage.getItem('theme') == 'light' : false;
+    switchTheme();
     function switchTheme() {
       mode=!mode;
       if(mode) {
@@ -63,4 +62,3 @@
       }
     }
   </script>
-<\html>
