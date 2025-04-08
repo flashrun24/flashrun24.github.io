@@ -246,13 +246,19 @@ Footer
   transform: translateY(1.7122%);
 }
 
+.contact-button {
+  color: var(--text-color);
+  background-color: rgba(0,0,0,0);
+  border-color: rgba(0,0,0,0);
+}
+
 .fa, .fa-brands, .fa-duotone, .fa-light, .fa-regular, .fa-solid, .fa-thin, .fab, .fad, .fal, .far, .fas, .fat {
   font-style: normal;
   font-variant: normal;
   font-variant-caps: normal;
   font-variant-alternates: normal;
   font-variant-east-asian: normal;
-  font-variant-emoji: ;
+  font-variant-emoji: normal;
   font-variant-ligatures: normal;
   font-variant-numeric: normal;
   font-variant-position: normal;
@@ -284,4 +290,66 @@ Footer
 
 .fa-moon::before {
   content: "\f186";
+}
+
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 25%;
+  left: 40%;
+  z-index: 9;
+  color: var(--text-color);
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 40%;
+  padding: 10px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  box-shadow: 0 0 5.0rem var(--tint-color);
+}
+
+/* Full-width input fields */
+.form-container input[type=text] {
+  width: 90%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  color: var(--text-color);
+}
+
+.form-text {
+  color: var(--text-color);
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus {
+  background-color: #ddd;
+  outline: none;
+  color: var(--text-color);
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #04AA6D;
+  color: var(--text-color);
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.9;
+  align-self: center;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
 }

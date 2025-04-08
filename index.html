@@ -17,6 +17,19 @@
 	<a href="https://github.com/flashrun24" class="navbarButton">github</a>
       </div>
     </div>
+    <div class="form-popup" id="contact-form">
+      <form action="" class="form-container">
+	<h1 class="form-text">Contact</h1>
+	<label for="email"><b class="form-text">Email</b></label>
+	<input type="text" placeholder="Enter Email" name="email" required>
+
+	<label for="text"><b class="form-text">Reason</b></label>
+	<input type="text" placeholder="Why you are contacting me" name="info" required>
+
+	<button type="submit" class="btn">Submit</button>
+	<button type="button" class="btn cancel" onclick="toggleContactForm()">Close</button>
+      </form>
+    </div>
     <div class="titleContainer">
       <div class="titleBox">
 	<div class="titleLeft">
@@ -30,7 +43,7 @@
 	</div>
       </div>
       <div class="titleBottom">
-        <p class="aboutTitle">About me</p>
+	<p class="aboutTitle">About me</p>
 	<p class="aboutText">I am currently a junior in highschool who is passionate about bioinformatics and computer science. I am also the Software development lead on <a href="https://7419.tech/">FRC Team 7419</a>.</p>
       </div>
     </div>
@@ -42,24 +55,34 @@
 	<p class="footerText">
 	<i class="linkiconImage fab fa-discord"></i> flashrun24
 	</p>
-        <p class="footerText">
+	<p class="footerText">
+	<button class="contact-button" onclick="toggleContactForm()">Contact</button>
+	</p>
+	<p class="footerText">
 	<i class="linkiconImage fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/sepandar-farhood/" class="footerLinkText">sepandar-farhood</a>
 	</p>
       </div>
     </div>
   </body>
   <script type="text/javascript">
+    function toggleContactForm() {
+      if(document.getElementById("contact-form").style.display == "none") {
+	document.getElementById("contact-form").style.display = "block";
+      } else {
+	document.getElementById("contact-form").style.display = "none";
+      }
+    }
     var mode = localStorage.getItem('theme') ? localStorage.getItem('theme') == 'light' : false;
     switchTheme();
     function switchTheme() {
       mode=!mode;
       if(mode) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
+	document.documentElement.setAttribute('data-theme', 'dark');
+	localStorage.setItem('theme', 'dark');
       }
       else {
-        document.documentElement.setAttribute('data-theme', 'light');
-        localStorage.setItem('theme', 'light');
+	document.documentElement.setAttribute('data-theme', 'light');
+	localStorage.setItem('theme', 'light');
       }
     }
   </script>
